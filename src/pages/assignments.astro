@@ -1,0 +1,36 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import AssignmentListing from '../components/Listing/index.jsx';
+
+const assignments = Astro.fetchContent('./assignments/*.md')
+  .filter(({ published_at }) => !!published_at)
+  .sort((a, b) => new Date(b.period_end) - new Date(a.period_end));
+
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Erfarenhet | Pablo Anttila" />
+    <style lang="scss">
+      .grid {
+        display: grid;
+        grid-gap: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+      <div class="bio wrapper wrapper__readable mt8">
+      <h1 class="title mt4 mb4">Erfarenhet</h1>
+      <div class="grid">
+        {assignments.map((assignment) => (
+          <AssignmentListing assignment={assignment} />
+        ))}
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>
