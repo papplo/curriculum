@@ -4,7 +4,7 @@ title: Tobii Tech Marketing
 client: Tobii
 published_at: 2021-08-04 00:00:00
 period_start: 2017-01-10 00:00:00
-pediod_end: 2018-01-01 00:00:00
+period_end: 2018-01-01 00:00:00
 
 role: 
     - Frontend-utvecklare
