@@ -5,14 +5,12 @@ function Nav() {
   return (
     <nav className={Styles.nav}>
       <a className={Styles.logolink} href="/">
-        <div className={Styles.monogram}>Pa</div>
+        <div className={Styles.monogram}>P</div>
       </a>
       <a className={Styles.link} href="/assignments">Uppdrag</a>
-      <a className={Styles.link} href="/projects">
-        Projekt
-      </a>
-      <a className={Styles.link} href="/about">
-        Konsultprofil
+
+      <a className={Styles.link} href="/devlog">
+        Developer Log
       </a>
 
       <a className={Styles.social} href="https://github.com/papplo">

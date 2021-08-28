@@ -8,6 +8,15 @@ body {
     font-family: $body;
 }
 
+.main_cover {
+	margin: 0 -3.125rem;
+	height: calc(100vh - 10rem);
+	min-height: 400px;
+	background: #f0efea url(../images/bg.jpg) repeat;
+	background-size: 400px;
+	z-index: -1;
+}
+
 * {
     box-sizing: content-box;
 }

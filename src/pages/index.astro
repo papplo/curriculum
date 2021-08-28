@@ -17,14 +17,12 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
     <style lang="scss">
       @use '../../public/styles/var' as *;
 
-      $w-s: #{$min-mobile};
-
       .hero {
         position: relative;
         overflow: hidden;
         height: 35vh;
 
-        @media (min-width: $w-s) {
+        @media (min-width: $min-mobile) {
           height: 45vw;
         }
       }
@@ -48,7 +46,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         justify-content: center;
         padding: 2rem 2rem 2rem 3rem;
 
-        @media (min-width: $w-s) {
+        @media (min-width: $min-mobile) {
           padding: 0 6rem 0 8rem;
         }
       }
@@ -61,7 +59,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         margin-top: 0;
         line-height: $f-d2;
 
-        @media (min-width: $w-s) {
+        @media (min-width: $min-mobile) {
           font-size: $f-u8;
           text-indent: -1.5em;
           line-height: $f-d1;
@@ -79,8 +77,6 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         
       }
 
-      
-
       .grid {
         display: grid;
         grid-gap: 2rem;
@@ -96,7 +92,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         padding: 0.25em 0.5em;
         z-index: 2;
 
-        @media (min-width: $w-s) {
+        @media (min-width: $min-mobile) {
           font-size: $f-u3;
         }
 
@@ -154,7 +150,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         max-width: 25em;
         margin: 2rem auto;
 
-        @media (min-width: $w-s) {
+        @media (min-width: $min-mobile) {
           max-width: 50rem;
         }
       }
@@ -175,34 +171,36 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
   </head>
   <body>
     <Nav />
-    <header class="hero">
-      <div class="">
+    <section class="hero">
         <div class="overlay">
           <h1 class="hero_title title">
             Pablo Anttila <span class="subtitle">— Frontend-utvecklare specialiserad på JavaScript för webb och mobil. 
             Utformar Ui/Ux, har ett öga för detaljer och bakgrund inom visuell kommunikation.</span>
           </h1>
         </div>
-      </div>
-    </header>
+    </section>
 
     <main class="wrapper mt4 mb4">
-        <div class="section">
-          <h3 class="section_title title">Senaste kunduppdragen</h3>
-          <div class="grid">
-            {latestAssignments.map((assignment) => (
-              <AssignmentListing assignment={assignment} />
-            ))}
-          </div>
-          <div class="tac mt4">
+        <div class="wrapper">
+          <h3 class="section_title title">Profil</h3>
+          <p>Pablo har arbetat med utveckling och design sedan 2010 och har utvecklat en stark passion för moderna och kundcentrerade lösningar.</p>
+          <p>Genom åren har han arbetat inom roller som innefattar allt från frontend-utveckling till visuell- & Ui/Ux-design inom både mobil och webb.</p>
+          <p>Han har utvecklat ett starkt tekniskt kunnande som han kombinerar med ett öga för detaljer och en stor vana att arbeta agilt nära backendutvecklare, designers och kravställare.</p>
+          <p>Från hans olika projekt inom online- och e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.</p>
+          <p>Pablo har även spenderat några år arbetandes inom den digital världen i Chile. Utöver sitt modersmål svenska talar och skriver han flytande engelska, spanska och finska.</p>
+
+          <div class="mt4">
             <a href="/assignments" class="link mr4">
-              Se flera kunduppdrag
+              Läs om mina kunduppdrag
             </a>
-              <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> </Button>
+              <a href="/assets/Cv_PabloAnttila_2021.pdf" download>
+                <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> 
+              </Button>
+              </a>
           </div>
       </div>
-
     </main>
+    <aside />
     <Footer />
   </body>
 </html>
