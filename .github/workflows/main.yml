@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - uses: actions/chechout@v2
+      - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm ci
@@ -28,7 +28,7 @@ jobs:
           touch ./dist/.nojekyll
 
       - name: Push Pages to repo
-        uses: cpina/github-actions-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -37,4 +37,4 @@ jobs:
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
-          target-branch: feature/cd-github-pages
+          target-branch: main
