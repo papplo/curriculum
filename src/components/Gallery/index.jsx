@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import Styles from './styles.module.scss';
-import DefaultImage from '/assets/test.jpg'
+//import DefaultImage from '/assets/test.jpg'
 
 // export interface Props {
 //     images: Array<String>;
