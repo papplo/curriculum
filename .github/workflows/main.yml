@@ -37,4 +37,4 @@ jobs:
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
-          target-branch: feature/cd-github-pages
+          target-branch: main
