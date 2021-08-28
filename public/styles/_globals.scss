@@ -1,0 +1,135 @@
+@use './_var' as *;
+
+// Base
+
+body {
+    margin: 0;
+    color: $t-fg;
+    font-family: $body;
+}
+
+* {
+    box-sizing: content-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+
+    &.link {
+        transition: background-size 150ms;
+        background-position: 0 2em;
+        background-image: -webkit-linear-gradient(
+        top,
+        transparent 60%,
+        #0838ff 60%
+        );
+        background-image: linear-gradient(to bottom, transparent 60%, #0838ff 60%);
+        background-repeat: repeat-x;
+        background-size: 1px 2px;
+
+        &:hover {
+        background-size: 1px 4px;
+        background-position: 0 1.28em;
+        color: currentColor;
+        }
+    }
+}
+
+h1 {
+    font-size: $f-u8;
+}
+
+// Utils
+
+// color
+$colors: "black", "blue", "white", "light";
+@each $colorvar in $colors {
+  // text color
+  .tc-#{$colorvar} {
+    color: '$c-'#{$colorvar};
+  }
+  // background color
+  .bg-#{$colorvar} {
+    background-color: '$c-'#{$colorvar};
+  }
+}
+
+// font size
+@for $i from 0 through 18 {
+  .f-u#{$i} {
+    font-size: '$f-u'#{$i};
+  }
+  .f-d#{$i} {
+    font-size: '$f-d'#{$i};
+  }
+}
+
+// margin & padding
+@for $i from 0 through 36 {
+  .ma#{$i} {
+    margin: #{0.5 * $i}rem;
+  }
+  .mt#{$i} {
+    margin-top: #{0.5 * $i}rem;
+  }
+  .mr#{$i} {
+    margin-right: #{0.5 * $i}rem;
+  }
+  .mb#{$i} {
+    margin-bottom: #{0.5 * $i}rem;
+  }
+  .ml#{$i} {
+    margin-left: #{0.5 * $i}rem;
+  }
+  .pa#{$i} {
+    padding: #{0.5 * $i}rem;
+  }
+  .pt#{$i} {
+    padding-top: #{0.5 * $i}rem;
+  }
+  .pr#{$i} {
+    padding-right: #{0.5 * $i}rem;
+  }
+  .pb#{$i} {
+    padding-bottom: #{0.5 * $i}rem;
+  }
+  .pl#{$i} {
+    padding-left: #{0.5 * $i}rem;
+  }
+}
+
+// text align
+.tac {
+  text-align: center;
+}
+.tal {
+  text-align: left;
+}
+.tar {
+  text-align: right;
+}
+
+// wrapper
+.wrapper {
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.wrapper__readable {
+  max-width: 50rem;
+}
+
+.title {
+  font-size: $f-u5;
+  color: $c-orange;
+  font-weight: 400;
+  font-style: italic;
+}
