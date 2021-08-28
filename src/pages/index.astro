@@ -20,17 +20,11 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
       .hero {
         position: relative;
         overflow: hidden;
-        height: 35vh;
+        height: 25vh;
 
         @media (min-width: $min-mobile) {
-          height: 45vw;
+          height: 39vw;
         }
-      }
-
-      .img {
-        display: block;
-        width: 100%;
-        height: auto;
       }
 
       .overlay {
@@ -44,10 +38,10 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 2rem 2rem 2rem 3rem;
+        padding: 2rem 1rem 1rem 2rem;
 
         @media (min-width: $min-mobile) {
-          padding: 0 6rem 0 8rem;
+          padding: 0 2rem 0 6rem;
         }
       }
 
@@ -60,19 +54,22 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         line-height: $f-d2;
 
         @media (min-width: $min-mobile) {
-          font-size: $f-u8;
+          font-size: $f-u7;
           text-indent: -1.5em;
-          line-height: $f-d1;
+          line-height: $f-d3;
 
         }
 
         .subtitle {
           display: inline;
           font-weight: 400;
-          font-size: $f-d6;
+          font-size: $f-d7;
           font-style: normal;
           color: $c-gray;
           line-height: 95%;
+          @media (min-width: $min-mobile) {
+            font-size: $f-d7;
+          }
         }
         
       }
@@ -100,24 +97,6 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
           margin-left: 1em;
         }
 
-        &:nth-of-type(1) {
-          .invert {
-            background-color: $c-pink;
-          }
-        }
-
-        &:nth-of-type(2) {
-          .invert {
-            background-color: $c-blue;
-          }
-        }
-
-        &:nth-of-type(3) {
-          .invert {
-            background-color: $c-green;
-          }
-        }
-
         &:hover {
           .invert {
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -125,34 +104,10 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         }
       }
 
-      .invert {
-        position: absolute;
-        color: $t-fg;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-        transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-      }
-
       .desc {
         font-size: $f-u2;
         margin-top: 1.5rem;
         margin-bottom: 0;
-      }
-
-      .wrapper {
-        max-width: 25em;
-        margin: 2rem auto;
-
-        @media (min-width: $min-mobile) {
-          max-width: 50rem;
-        }
       }
 
       .bio {
@@ -170,6 +125,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
     </style>
   </head>
   <body>
+    <main class="wrapper">
     <Nav />
     <section class="hero">
         <div class="overlay">
@@ -180,25 +136,24 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         </div>
     </section>
 
-    <main class="wrapper mt4 mb4">
-        <div class="wrapper">
-          <h3 class="section_title title">Profil</h3>
-          <p>Pablo har arbetat med utveckling och design sedan 2010 och har utvecklat en stark passion för moderna och kundcentrerade lösningar.</p>
-          <p>Genom åren har han arbetat inom roller som innefattar allt från frontend-utveckling till visuell- & Ui/Ux-design inom både mobil och webb.</p>
-          <p>Han har utvecklat ett starkt tekniskt kunnande som han kombinerar med ett öga för detaljer och en stor vana att arbeta agilt nära backendutvecklare, designers och kravställare.</p>
-          <p>Från hans olika projekt inom online- och e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.</p>
-          <p>Pablo har även spenderat några år arbetandes inom den digitala världen i Chile. Utöver sitt modersmål svenska talar och skriver han flytande engelska, spanska och finska.</p>
+    <div class="wrapper wrapper__readable mt8">
+      <h3 class="section_title title">Profil</h3>
+      <p>Pablo har arbetat med utveckling och design sedan 2010 och har utvecklat en stark passion för moderna och kundcentrerade lösningar.</p>
+      <p>Genom åren har han arbetat inom roller som innefattar allt från frontend-utveckling till visuell- & Ui/Ux-design inom både mobil och webb.</p>
+      <p>Han har utvecklat ett starkt tekniskt kunnande som han kombinerar med ett öga för detaljer och en stor vana att arbeta agilt nära backendutvecklare, designers och kravställare.</p>
+      <p>Från hans olika projekt inom online- och e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.</p>
+      <p>Pablo har även spenderat några år arbetandes inom den digitala världen i Chile. Utöver sitt modersmål svenska talar och skriver han flytande engelska, spanska och finska.</p>
 
-          <div class="mt4">
-            <a href="/assignments" class="link mr4">
-              Läs om mina kunduppdrag
-            </a>
-              <a href="/assets/Cv_PabloAnttila_2021.pdf" download>
-                <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> 
-              </Button>
-              </a>
-          </div>
+      <div class="mt4">
+        <a href="/assignments" class="link mr4">
+          Läs om mina kunduppdrag
+        </a>
+          <a href="/assets/Cv_PabloAnttila_2021.pdf" download>
+            <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> 
+          </Button>
+          </a>
       </div>
+    </div>
     </main>
     <aside />
     <Footer />

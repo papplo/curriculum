@@ -27,9 +27,9 @@ const {status, feed, items} = await posts.json()
     </style>
   </head>
   <body>
-    <Nav />
     <div class="wrapper">
-      <div class="bio wrapper wrapper__readable mt8">
+    <Nav />
+      <div class="wrapper wrapper__readable mt8">
         <h1 class="title mt4 mb4">Senaste artiklar</h1>
         <ul class="bio">
           {items.map(({ link, title }) => (
