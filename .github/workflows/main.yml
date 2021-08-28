@@ -27,7 +27,7 @@ jobs:
           npm run build
           touch ./dist/.nojekyll
 
-      - name: Push pages to repo
+      - name: Push Pages to repo
         uses: cpina/github-actions-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
