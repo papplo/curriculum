@@ -3,9 +3,12 @@
   display: flex;
   align-items: center;
   padding-top: 2.75rem;
-  padding-right: 4rem;
+  padding-right: 1rem;
   padding-bottom: 1.5rem;
-  padding-left: 4rem;
+  padding-left: 1rem;
+  @media (min-width: $min-mobile) {
+    padding-left: 2rem;
+  }
 }
 
 .avatar {
