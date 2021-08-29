@@ -164,6 +164,11 @@ $colors: "black", "blue", "white", "light";
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  
+  @media (max-width: $min-mobile) {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
 }
 .wrapper__readable {
   max-width: 50rem;
