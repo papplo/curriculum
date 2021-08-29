@@ -1,11 +1,12 @@
 import { h } from "preact";
 import Styles from "./styles.module.scss";
+import avatar from '../../../public/assets/avatar.jpg';
 
 function Nav() {
   return (
     <nav className={Styles.nav}>
       <a className={Styles.avatar} href="/">
-        <img src="assets/avatar.jpg" />
+        <img src={avatar} />
       </a>
       <a className={Styles.link} href="/assignments">
         Uppdrag

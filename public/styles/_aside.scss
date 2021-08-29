@@ -13,8 +13,8 @@ aside {
   min-height: 400px;
   background-color: $c-yellow;
   background-image: linear-gradient(135deg, #fefaf1, $c-yellow);
-  // background-image: url("../assets/joey-remedy-XUdUrw4fJWU-unsplash.jpg");
-  background-size: 100%;
+  background-image: url("../assets/joey-remedy-XUdUrw4fJWU-unsplash.jpg");
+  background-size: 320px;
   z-index: -1;
   @media (min-width: $min-mobile) {
     display: block;
@@ -42,6 +42,8 @@ aside img {
 
 @media (min-width: $min-mobile) {
   body {
+    transition: margin 125ms ease-in-out 225ms;
+
     margin-left: 33.3333333vw;
   }
   aside {
