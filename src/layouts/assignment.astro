@@ -4,12 +4,15 @@ import Button from '../components/Button/index.jsx';
 import Footer from '../components/Footer/index.jsx';
 import Nav from '../components/Nav/index.jsx';
 
-const { content } = Astro.props;
+const { period_end, period_start, title, client, lang, role, description, url, tags, teknik } = Astro.props.content;
+const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end).getFullYear()}`
+
 ---
-<html lang={ content.lang || 'en' }>
+<html lang={ lang || 'en' }>
   <head>
-    <MainHead title={content.title} />
+    <MainHead title={title} />
     <style lang="scss">
+      @use '../../public/styles/_var.scss' as *;
       .hero {
         padding: 8rem;
         display: flex;
@@ -23,35 +26,20 @@ const { content } = Astro.props;
         justify-content: center;
       }
 
-      .tag {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-        text-transform: uppercase;
-
-        &:nth-of-type(1n) {
-          color: var(--c-green);
-        }
-        &:nth-of-type(2n) {
-          color: var(--c-orange);
-        }
-        &:nth-of-type(3n) {
-          color: var(--c-blue);
-        }
-        &:nth-of-type(4n) {
-          color: var(--c-pink);
-        }
+      .assignmentTitle {
+        font-size: $f-u3;
+        font-style: bold;
+        letter-spacing: 0.0025em;
+        margin-bottom: 0;
+        margin-top: 2em;
       }
-
-      .title {
-        font-size: var(--f-u10);
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.0625em;
+      .date {
+        font-size: $f-d3;
+        color: $c-light;
       }
-
       .leadIn {
+        font-size: $f-u4;
         color: var(--t-bg);
-        background-color: var(--t-fg);
       }
 
       .tagline {
@@ -64,27 +52,28 @@ const { content } = Astro.props;
         font-size: var(--f-u1);
         line-height: 2.2;
       }
+
+      aside {
+        background-image: none;
+      }
     </style>
   </head>
-  <body>
-    <Nav />
-      <h1 class="title">{content.title}</h1>
-    <div class="leadIn">
-      <div class="wrapper pt8 pb8 mb8 tac">
-        {content.tags.map((t) => (
-          <span class="tag">{t}</span>
-        ))}
-        <h3 class="tagline">{content.description}</h3>
+  <body id="assignment"  >
+    <main class="wrapper">
+      <Nav />
+
+    <div class="wrapper wrapper-readable leadIn">
+      <h1 class="assignmentTitle">{title}</h1>
+      <span class="date">{renderDate}</span>
+      <div class="pt8 pb8 mb8">
+        <span class="tagline">{description}</span>
       </div>
     </div>
     <div class="wrapper wrapper__readable">
       <div class="content"><slot></slot></div>
     </div>
-    <footer class="tac mt6">
-      <a href="/projects">
-        <Button>View More</Button>
-      </a>
-    </footer>
+    </main>
+    <aside />
     <Footer />
   </body>
 </html>
