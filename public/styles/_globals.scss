@@ -8,14 +8,6 @@ body {
     font-family: $body;
 }
 
-.main_cover {
-	margin: 0 -3.125rem;
-	height: calc(100vh - 10rem);
-	min-height: 400px;
-	background: #f0efea url(../images/bg.jpg) repeat;
-	background-size: 400px;
-	z-index: -1;
-}
 
 * {
     box-sizing: content-box;
@@ -52,8 +44,49 @@ a {
 
 h1 {
     font-size: $f-u8;
-}
+  }
 
+blockquote {
+  text-indent: 1em;
+  position: relative;
+  color: $c-light;
+  background-color: #FDFBFA;
+  font-size: $f-d2; 
+  margin: 0;
+  padding: 1.2em 1.5em;
+  max-width: 45em;
+  
+  &:before, &:after {
+    background-color: #FDFBFA;
+    text-indent: 0;
+    text-align: center;
+    font-family: arial;
+    position: absolute;
+    color:  $c-orange;
+    font-size: $f-u14;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:before {
+    content: '”';
+    left: -1.5rem;
+    top: -1rem;
+  }
+  
+  &:after {
+    content: '”';
+    right: -1.5rem;
+    bottom: .5rem;
+  }
+
+  span {
+    text-indent: 0;
+    color: $c-black;
+    display: block;
+    margin-top: 1em;
+  }
+}
 // Utils
 
 // color

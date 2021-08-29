@@ -5,6 +5,8 @@ import Button from '../components/Button/index.jsx';
 import Nav from '../components/Nav/index.jsx';
 import Footer from '../components/Footer/index.jsx';
 import AssignmentListing from '../components/Listing/index.jsx';
+import { Markdown } from 'astro/components';
+import quoteTomasImage from '../../public/assets/quote-thomas.jpeg';
 
 const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
   .sort((a,b) => new Date(b.period_end) - new Date(a.period_end))
@@ -15,15 +17,15 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
   <head>
     <MainHead title="Pablo Anttila - Frontend-utvecklare specialiserad på JavaScript för webb och mobil" />
     <style lang="scss">
-      @use '../../public/styles/var' as *;
+      @use '../../public/styles/_var.scss' as *;
 
       .hero {
         position: relative;
         overflow: hidden;
-        height: 25vh;
+        height: 28vh;
 
         @media (min-width: $min-mobile) {
-          height: 39vw;
+          height: 33vw;
         }
       }
 
@@ -71,56 +73,17 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
             font-size: $f-d7;
           }
         }
-        
       }
 
       .grid {
         display: grid;
         grid-gap: 2rem;
-
-      }
-
-      .role {
-        position: relative;
-        display: inline-block;
-        font-weight: 900;
-        color: $t-bg;
-        background-color: $t-fg;
-        padding: 0.25em 0.5em;
-        z-index: 2;
-
-        @media (min-width: $min-mobile) {
-          font-size: $f-u3;
-        }
-
-        + .role {
-          margin-left: 1em;
-        }
-
-        &:hover {
-          .invert {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-          }
-        }
-      }
-
-      .desc {
-        font-size: $f-u2;
-        margin-top: 1.5rem;
-        margin-bottom: 0;
       }
 
       .bio {
-        line-height: 2;
+        font-size: $f-u1;
+        line-height: 1.7;
         margin-bottom: 2rem;
-
-        > span:first-of-type {
-          line-height: 1;
-          margin-bottom: 0.5em;
-          display: block;
-          font-weight: 700;
-          font-size: $f-u4;
-        }
       }
     </style>
   </head>
@@ -136,23 +99,33 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         </div>
     </section>
 
-    <div class="wrapper wrapper__readable mt8">
-      <h3 class="section_title title">Profil</h3>
-      <p>Pablo har arbetat med utveckling och design sedan 2010 och har utvecklat en stark passion för moderna och kundcentrerade lösningar.</p>
-      <p>Genom åren har han arbetat inom roller som innefattar allt från frontend-utveckling till visuell- & Ui/Ux-design inom både mobil och webb.</p>
-      <p>Han har utvecklat ett starkt tekniskt kunnande som han kombinerar med ett öga för detaljer och en stor vana att arbeta agilt nära backendutvecklare, designers och kravställare.</p>
-      <p>Från hans olika projekt inom online- och e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.</p>
-      <p>Pablo har även spenderat några år arbetandes inom den digitala världen i Chile. Utöver sitt modersmål svenska talar och skriver han flytande engelska, spanska och finska.</p>
+    <div class="wrapper wrapper__readable">
+        <h2 class="section_title title">Profil</h2>
+      <div class="bio">
+        <Markdown>
+          Jag har arbetat med utveckling och design sedan 2010 och har utvecklat en stark passion för moderna och kundcentrerade lösningar på webben.
+          
+          Genom åren har jag fått tillfälle att arbeta med varierade roller inom _webbutveckling_, _formgivning_ och _Ui/Ux-design_. Rollerna har byggt en stor vana och trygghet i att arbeta agilt nära utvecklare, designers och kravställare.
 
-      <div class="mt4">
-        <a href="/assignments" class="link mr4">
-          Läs om mina kunduppdrag
+          Projekten har utvecklat mitt tekniska kunnande och gett mig förståelse för affärsnyttan och vikten av mätbarhet i allt mitt arbete. Jag nöjer mig inte enbart med att leverera och samarbeta i team, då jag har erfarit att slutkundens upplevelse av digitala tjänster och produkter är av största vikt.
+        </Markdown>
+        </div>
+
+      <div class="mt4 mb8">
+        <a href="/assets/Cv_PabloAnttila_2021.pdf" download class="mr2">
+          <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> 
+        </Button>
         </a>
-          <a href="/assets/Cv_PabloAnttila_2021.pdf" download>
-            <Button>Ladda ned mitt cv <span class="ml1 mt0 mb0 f-u1">↓</span> 
-          </Button>
-          </a>
+        <a href="https://www.linkedin.com/in/pablo-a-bb84a24/" class="mt2">
+          <Button>Kontakt på Linkedin <span class="ml1 mt0 mb0 f-u1">+</span> 
+        </Button>
+        </a>
       </div>
+
+      <blockquote class="f-u4 mt4">
+        Från e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.
+        <span><strong>Tomas Näslund</strong>, Deputy CEO at R2M </span>
+      </blockquote>
     </div>
     </main>
     <aside />

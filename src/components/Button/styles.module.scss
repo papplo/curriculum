@@ -1,7 +1,14 @@
+@use '../../../public/styles/_var.scss' as *;
+
 .button {
+  transition: border 200ms;
   display: inline-block;
-  border: 3px solid currentColor;
+  border: 2px solid currentColor;
   padding: 0.5em 1em;
   font-weight: 400;
   // text-transform: capitalize;
+
+  &:hover, &:focus {
+    border-color: $c-orange;
+  }
 }
