@@ -1,67 +1,66 @@
 ---
-import MainHead from '../components/MainHead.astro';
+import { getLanguageFromUrl } from '$/lang.js';
+  
+  // Import layout partials
+import BaseLayout from '$layouts/BaseLayout.astro'
+  // Import components
 import Button from '../components/Button/index.jsx';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
+
+const currentPage = Astro.request.url.pathname
+const language = getLanguageFromUrl(currentPage)
 
 const { period_end, period_start, title, client, lang, role, description, url, tags, teknik } = Astro.props.content;
 const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end).getFullYear()}`
 
 ---
-<html lang={ lang || 'en' }>
-  <head>
-    <MainHead title={title} />
-    <style lang="scss">
-      @use '../../public/styles/_var.scss' as *;
-      .hero {
-        padding: 8rem;
-        display: flex;
-        background-color: var(--t-fg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 25vw;
-        color: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+<BaseLayout addHead lang={language} bodyClassName="assignment">
+  <style lang="scss">
+    @use '../../public/styles/_var.scss' as *;
+    .hero {
+      padding: 8rem;
+      display: flex;
+      background-color: var(--t-fg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 25vw;
+      color: white;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .assignmentTitle {
-        font-size: $f-u3;
-        font-style: bold;
-        letter-spacing: 0.0025em;
-        margin-bottom: 0;
-        margin-top: 2em;
-      }
-      .date {
-        font-size: $f-d3;
-        color: $c-light;
-      }
-      .leadIn {
-        font-size: $f-u4;
-        color: var(--t-bg);
-      }
+    .assignmentTitle {
+      font-size: $f-u3;
+      font-style: bold;
+      letter-spacing: 0.0025em;
+      margin-bottom: 0;
+      margin-top: 2em;
+    }
+    .date {
+      font-size: $f-d3;
+      color: $c-light;
+    }
+    .leadIn {
+      font-size: $f-u4;
+      color: var(--t-bg);
+    }
 
-      .tagline {
-        font-weight: 300;
-        font-size: var(--f-u3);
-        line-height: 1.5;
-      }
+    .tagline {
+      font-weight: 300;
+      font-size: var(--f-u3);
+      line-height: 1.5;
+    }
 
-      .content {
-        font-size: var(--f-u1);
-        line-height: 2.2;
-      }
+    .content {
+      font-size: var(--f-u1);
+      line-height: 2.2;
+    }
 
-      aside {
-        background-image: none;
-      }
-    </style>
-  </head>
-  <body id="assignment"  >
+    aside {
+      background-image: none;
+    }
+  </style>
     <main class="wrapper">
-      <Nav />
-
     <div class="wrapper wrapper-readable leadIn">
       <h1 class="assignmentTitle">{title}</h1>
       <span class="date">{renderDate}</span>
@@ -72,8 +71,7 @@ const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(perio
     <div class="wrapper wrapper__readable">
       <div class="content"><slot></slot></div>
     </div>
-    </main>
-    <aside />
-    <Footer />
-  </body>
-</html>
+  </main>
+  <aside />
+</BaseLayout>
+

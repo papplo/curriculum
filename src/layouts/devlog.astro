@@ -1,0 +1,44 @@
+---
+import { SITE } from '$/config'
+import { getLanguageFromUrl } from '$/lang';
+
+import BaseLayout from '$layouts/BaseLayout.astro';
+
+const { content } = Astro.props
+const currentPage = Astro.request.url.pathname;
+const lang = getLanguageFromUrl(currentPage);
+
+  // Dynamic pull of content from external source - rendered buildtime
+const posts = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@hvtwcfhj`)
+const {status, feed, items} = await posts.json()
+---
+
+<BaseLayout addHead lang={lang} bodyClassName="page devlog-page">
+  <style lang="scss">
+    @use '../../public/styles/_var.scss' as *;
+    .title {
+      font-size: $f-u5;
+      color: $c-orange;
+      font-weight: 400;
+      font-style: italic;
+    }
+    .bio {
+      font-size: $f-u1;
+      line-height: 2;
+      text-rendering: optimizeLegibility;
+    }
+  </style>
+  <main class="wrapper">
+    <div class="wrapper wrapper__readable mt8">
+      <h1 class="title mt4 mb4">{content.title}</h1>
+      <ul class="bio">
+        {items.map(({ link, title }) => (
+          <li>
+            <a style="link" href={link}>{title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+    <aside />
+</BaseLayout>
