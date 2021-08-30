@@ -1,0 +1,46 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+
+const posts = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@hvtwcfhj`)
+const {status, feed, items} = await posts.json()
+
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Pablo Anttila - Frontend-utvecklare specialiserad på JavaScript för webb och mobil" />
+    <style lang="scss">
+      @use '../../public/styles/_var.scss' as *;
+      .title {
+        font-size: $f-u5;
+        color: $c-orange;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .bio {
+        font-size: $f-u1;
+        line-height: 2;
+        text-rendering: optimizeLegibility;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+    <Nav />
+      <div class="wrapper wrapper__readable mt8">
+        <h1 class="title mt4 mb4">Senaste artiklar</h1>
+        <ul class="bio">
+          {items.map(({ link, title }) => (
+            <li>
+              <a style="link" href={link}>{title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <aside />
+    <Footer />
+</body>
+</html>

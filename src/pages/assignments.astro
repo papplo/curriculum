@@ -22,8 +22,9 @@ const assignments = Astro.fetchContent('./assignments/*.md')
     </style>
   </head>
   <body>
+  <main class="wrapper">
     <Nav />
-      <div class="bio wrapper wrapper__readable mt8">
+      <div class="wrapper wrapper__readable mt8">
       <h1 class="title mt4 mb4">Erfarenhet</h1>
       <div class="grid">
         {assignments.map((assignment) => (
@@ -31,6 +32,8 @@ const assignments = Astro.fetchContent('./assignments/*.md')
         ))}
       </div>
     </div>
-    <Footer />
+  </main>
+  <aside />
+  <Footer />
   </body>
 </html>

@@ -2,6 +2,8 @@
 layout: ../../layouts/assignment.astro
 title: Dreamlake
 client: Dreamlake
+image: ./../../assets/dreamlake/search-and-book-01.jpg
+image_bg: black
 published_at: 2021-08-04 00:00:00
 period_start: 2018-10-01 00:00:00
 period_end: 2020-04-01 00:00:00
