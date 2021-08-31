@@ -46,6 +46,12 @@ h1 {
     font-size: $f-u8;
   }
 
+ul.reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;  
+}
+
 blockquote {
   text-indent: 1em;
   position: relative;
