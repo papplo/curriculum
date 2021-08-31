@@ -24,6 +24,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
       position: relative;
       overflow: hidden;
       height: 28vh;
+      min-height: 180px;
 
       @media (min-width: $min-mobile) {
         height: 33vw;
@@ -41,7 +42,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      padding: 2rem 1rem 1rem 2rem;
+      padding: 2rem 1rem 1rem 1.4rem;
 
       @media (min-width: $min-mobile) {
         padding: 0 2rem 0 6rem;
@@ -115,7 +116,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
 
       <blockquote class="f-u4 mt4">
         Från e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.
-        <span><strong>Tomas Näslund</strong>, Deputy CEO at R2M </span>
+        <span><strong>Thomas Näslund</strong>, Deputy CEO at R2M </span>
       </blockquote>
     </div>
   </main>
