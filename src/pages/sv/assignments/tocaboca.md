@@ -2,6 +2,8 @@
 layout: $layouts/assignment.astro
 title: Toca Boca
 client: Toca Boca
+image: ../../assets/tocaboca/TocaBoca_Logo_RGB.png
+image_bg: gray
 published_at: 2021-08-04 00:00:00
 period_start: 2020-09-15 00:00:00
 period_end: 2021-05-01 00:00:00
@@ -11,7 +13,7 @@ role:
   - Ui/Ux-designer
 
 description: |
-  Som konsult i det nya ID-teamet har jag varit med och utvecklat ett nytt system som syftar till att öppna upp för multiplayer-funktionalitet i bolagets framtida appar och spel.
+  Som konsult i det nya ID-teamet har jag i team utvecklat ett nytt system som möjliggör för multiplayer-funktionalitet i bolagets framtida appar och spel.
 
 tags:
   - Agile
@@ -19,11 +21,33 @@ tags:
   - Spel
 
 teknik:
-  - AWS, Docker, React, NestJs, Typescript, NodeJs, Jest, Jenkins, Cypress, Git, Github, Jira, Miro
+  - AWS
+  - Docker
+  - React
+  - NestJs
+  - Typescript
+  - NodeJs
+  - Jest
+  - Jenkins
+  - Cypress
+  - Git
+  - Github
+  - Jira
+  - Miro
 ---
 
-Toca Boca designar, utvecklar och ger ut spel/appar riktade till den unga användarskaran mellan 7-12 år. Bolagets spel är open-ended och manar barn till lek och utforskning i sina titlar – bla Toca Life World, som är kontinuerligt bland topplistorna i antalet downloads i Apple och Android app store.
+Toca Boca designar, utvecklar och ger ut spel/appar riktade till en användarskara i åldern 7-12 år. Bolagets spel är open-ended och manar barn till lek och utforskning i sina titlar – bla Toca Life World.
 
-Som konsult i det nya ID-teamet har jag varit med och utvecklat ett nytt system som syftar till att öppna upp för multiplayer-funktionalitet i bolagets framtida appar och spel. Inloggning, autentisering, föräldrakontroll och vän-koder har varit fokuset i mitt arbete som jag bedrivit tillsammans i ett agilt team av tre utvecklare och en projektledare.
+Jag har arbetat i ett agilt format där vi tillsammans uppskattat och planerat för sprintens arbetsbelastning och noga betat ned målen/kraven till hanterbara uppgifter. Här har jag designat, testat och utvecklat produktens gränssnitt för både mobil och webb.
 
-Jag har arbetat i ett agilt format där vi tillsammans uppskattat och planerat för sprintens arbetsbelastning och noga betat ned målen/kraven till hanterbara uppgifter. Här har jag designat, testat och utvecklat produktens gränssnitt för både mobil och webb. Kod-reviews, parkodning, testning, dokumentation och retrospektion har varit en stor del uppdraget, vilket i distanstider bidragit till högre transparens och bättre kommunikation.
+Inloggning, autentisering, föräldrakontroll och vän-koder har varit fokuset i mitt arbete som jag bedrivit tillsammans i ett agilt team av tre utvecklare och en projektledare.
+
+### I uppdraget har jag bidragit med:
+
+- Vidareutveckling av plattformen inkremenellt genom kod-reviews, parkodning och dokumentation
+
+- Design och implementering av nya och befintliga features i systemet med _NestJs_, _AWS_ och _Docker_
+
+- Tagit lead på att utforma och koda den primarä användarupplevelsen i _ReactJS_ och _Typescript_
+
+- Lett teamets UX-arbete genom att producera wireframes, prototyper och tester, och drivit för presentera gruppens insikter till stakeholders och övriga team

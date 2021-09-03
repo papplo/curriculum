@@ -17,7 +17,7 @@ aside {
   background-size: 320px;
   z-index: -1;
   @media (min-width: $min-mobile) {
-    display: block;
+    display: flex;
   }
 }
 .assignment aside {
@@ -35,15 +35,15 @@ aside img {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  border: 1px solid slateblue;
+  // border: 1px solid slateblue;
   // box-shadow: 0.125em 0.125em 0.25em 0 rgba(0, 0, 0, 0.25);
-  // width: auto;
-  // max-width: 100%;
-  // height: auto;
-  // max-height: 100%;
-  // margin: 0 auto;
-  // text-align: center;
-  // object-fit: scale-down;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  object-fit: scale-down;
 }
 
 @media (min-width: $min-mobile) {

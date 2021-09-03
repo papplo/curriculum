@@ -10,7 +10,7 @@ import Button from '../components/Button/index.jsx';
 const currentPage = Astro.request.url.pathname
 const language = getLanguageFromUrl(currentPage)
 
-const { period_end, period_start, title, client, lang, role, description, url, tags, teknik } = Astro.props.content;
+const { period_end, period_start, title, client, lang, role, description, url, image, imagebg, tags, teknik } = Astro.props.content;
 const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end).getFullYear()}`
 
 const techStack = T('assignment','tech_stack', lang || language);
@@ -55,8 +55,12 @@ const myRole = T('assignment','my_role', lang || language);
     }
 
     .content {
-      font-size: var(--f-u1);
-      line-height: 2.2;
+      // font-size: $f-d1;
+      line-height: 1.8;
+      @media (min-width: $min-mobile) {
+        // font-size: $f-u1;
+        line-height: 2.2;
+      }
     }
 
     $tborder: 1px solid $c-border;
@@ -85,16 +89,20 @@ const myRole = T('assignment','my_role', lang || language);
 
       .role {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         @media (min-width: $min-mobile) {
           flex-direction: row;
         }
         .role_item {
           color: $c-gray;
           list-style: none;
-          font-size: $f-d1;
+          font-size: $f-d2;
           letter-spacing: 0.03em;
-          margin: 0 1.5em 0 0;
+          margin: 0 .8em 0 0;
+          @media (min-width: $min-mobile) {
+            font-size: $f-d1;
+          }
         }
       }
     }
@@ -132,6 +140,8 @@ const myRole = T('assignment','my_role', lang || language);
       <div class="content"><slot></slot></div>
     </div>
   </main>
-  <aside />
+  <aside background-color={imagebg}>
+    {image && <img src={image} />}
+  </aside>
 </BaseLayout>
 
