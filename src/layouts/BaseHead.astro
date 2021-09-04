@@ -1,16 +1,15 @@
 ---
-import {SITE} from '$/config.js';
-const { content = {}, canonicalURL} = Astro.props;
+import { SITE } from '$/config.js';
+const { lang = SITE.defaultLanguage , canonicalURL } = Astro.props;
 ---
- 
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="title" property="og:title" content={SITE.title} />
 <meta name="type" property="og:type" content="website" />
 <meta name="url" property="og:url" content={canonicalURL}/>
-<meta property="og.locale" content={SITE.defaultLanguage}/>
-<meta property="og:description" content={content.description ? content.description : SITE.description}/>
+<meta property="og.locale" content={lang}/>
+<meta property="og:description" content={SITE.description}/>
 <meta property="og:site_name" content={SITE.title}/>
 
 <title>{SITE.title}</title>

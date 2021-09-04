@@ -1,21 +1,35 @@
 import { h } from "preact";
-import Styles from "./styles.module.scss";
-import avatar from '../../../public/assets/avatar.jpg';
+import Styles from "./Navbar.module.scss";
+import avatar from "../../../public/assets/avatar.jpg";
+import { getAlternateLanguages } from "$/lang.js";
+import { KNOWN_LANGUAGES, MAIN_NAV } from "$/config.js";
 
-function Nav() {
+const renderLangaugeSwitch = (lang) => {
+  const altLangCodes = getAlternateLanguages(lang);
+  altLangCodes.map((lang) => ({
+    [lang]: KNOWN_LANGUAGES[lang] ? KNOWN_LANGUAGES[lang] : "undefinedLanguage",
+  }));
+
+  return altLangCodes.map((languageSet) => (
+    <a className={Styles.lang} href="">
+      Switch to {KNOWN_LANGUAGES[languageSet]}
+    </a>
+  ));
+};
+
+const Navbar = (props) => {
   return (
     <nav className={Styles.nav}>
       <a className={Styles.avatar} href="/">
         <img src={avatar} />
       </a>
-      <a className={Styles.link} href="/assignments">
-        Uppdrag
-      </a>
+      {MAIN_NAV[props.lang].map((navigationItem) => (
+        <a className={Styles.link} href={navigationItem.link}>
+          {navigationItem.text}
+        </a>
+      ))}
 
-      <a className={Styles.link} href="/devlog">
-        Developer Log
-      </a>
-
+      {/* <span class={Styles.langSwitch}>{renderLangaugeSwitch(props.lang)}</span> */}
       <a className={Styles.social} href="https://github.com/papplo">
         <svg
           className={Styles.socialicon}
@@ -27,5 +41,6 @@ function Nav() {
       </a>
     </nav>
   );
-}
-export default Nav;
+};
+
+export default Navbar;

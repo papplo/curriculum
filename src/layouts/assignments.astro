@@ -1,0 +1,43 @@
+---
+import { getLanguageFromUrl } from '$/lang';
+import { T } from '$/config.js';
+
+  // Import layout partials
+import BaseLayout from '$layouts/BaseLayout.astro'
+
+  // Import Components
+import AssignmentListing from '$components/Listing/index.jsx';
+
+const currentPage = Astro.request.url.pathname;
+const lang = getLanguageFromUrl(currentPage);
+
+const assignments = Astro.fetchContent('$/pages/*/assignments/*.md')
+  .filter((p) => getLanguageFromUrl(p.url) === lang && p)
+  .filter(({ published_at }) => !!published_at)
+  .sort((a, b) => new Date(b.period_end) - new Date(a.period_end));
+
+const { content } = Astro.props
+
+const seeMore = T('common', 'see_more', lang);
+---
+
+<BaseLayout addHead lang={lang}>
+  <style lang="scss">
+    .grid {
+      display: grid;
+      grid-gap: 3rem;
+    }
+  </style>
+  <main class="wrapper">
+      <div class="wrapper wrapper__readable mt8">
+      <h1 class="title mt4 mb4">{content.title}</h1>
+      <slot></slot>
+      <div class="grid">
+        {assignments.map((assignment) => (
+          <AssignmentListing assignment={assignment} strings={{seeMore}} />
+        ))}
+      </div>
+    </div>
+  </main>
+  <aside />
+</BaseLayout>

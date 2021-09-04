@@ -1,19 +1,17 @@
 ---
-layout: ../../layouts/assignment.astro
-title: Dreamlake
+layout: $layouts/project-split.astro
+title: Dreamlake Search & Book
 client: Dreamlake
-image: ./../../assets/dreamlake/search-and-book-01.jpg
-image_bg: black
-published_at: 2021-08-04 00:00:00
-period_start: 2018-10-01 00:00:00
-period_end: 2020-04-01 00:00:00
-
-role:
-  - Senior Frontend-utvecklare
-  - Ui/Ux-designer
+client_image: ../assets/dreamlake/dreamlake-logo.svg
+published_at: 2020-03-04 00:00:00
+images:
+  - ../assets/dreamlake/search-and-book-01.jpg
+bg_color: "#154772"
+fg_color: "#EDEDED"
+captions:
+  - Med Search & Book vidareutvecklade jag Dreamlakes plattform med e-handelsprinciper som att göra en friktionsfri checkout för användaren, och ett ytterligare förfinande och förbättrande av alla gränssnittets komponenter.
 description: |
-  Som senior frontend-utvecklare har jag ansvarat för design och implementering av både interna och externa system för bolagets mångfacetterade e-handelsplattform.
-  
+  Med Search & Book vidareutvecklade jag Dreamlakes plattform med e-handelsprinciper som att göra en friktionsfri checkout för användaren, och ett ytterligare förfinande och förbättrande av alla gränssnittets komponenter.
 tags:
   - Gränssnittsdesign
   - Visuell design
