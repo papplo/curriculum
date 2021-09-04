@@ -2,7 +2,7 @@
 layout: $layouts/assignment.astro
 title: Toca Boca
 client: Toca Boca
-image: ../../assets/tocaboca/TocaBoca_Logo_RGB.png
+image: /../../assets/tocaboca/TocaBoca_Logo_RGB.png
 image_bg: gray
 published_at: 2021-08-04 00:00:00
 period_start: 2020-09-15 00:00:00
