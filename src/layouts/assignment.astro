@@ -3,18 +3,22 @@ import { getLanguageFromUrl } from '$/lang.js';
 import { T } from '$/config.js';
   
   // Import layout partials
-import BaseLayout from '$layouts/BaseLayout.astro'
+import BaseLayout from '$layouts/BaseLayout.astro';
+
   // Import components
 import Button from '../components/Button/index.jsx';
+import Aside from '$components/Common/Aside.jsx';
 
 const currentPage = Astro.request.url.pathname
 const language = getLanguageFromUrl(currentPage)
 
-const { period_end, period_start, title, client, lang, role, description, url, image, imagebg, tags, teknik } = Astro.props.content;
+const { period_end, period_start, title, client, lang, role, description, image, caption, bg_color, fg_color, tags, teknik} = Astro.props.content;
 const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end).getFullYear()}`
-
 const techStack = T('assignment','tech_stack', lang || language);
 const myRole = T('assignment','my_role', lang || language);
+
+const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
+
 ---
 <BaseLayout addHead lang={language} bodyClassName="assignment">
   <style lang="scss">
@@ -107,9 +111,6 @@ const myRole = T('assignment','my_role', lang || language);
       }
     }
 
-    aside {
-      background-image: none;
-    }
   </style>
     <main class="wrapper wrapper-readable">
     <section class="wrapper leadIn">
@@ -140,8 +141,7 @@ const myRole = T('assignment','my_role', lang || language);
       <div class="content"><slot></slot></div>
     </div>
   </main>
-  <aside background-color={imagebg}>
-    {image && <img src={image} />}
-  </aside>
+  <Aside type='assignment' ...asideProps />
+
 </BaseLayout>
 
