@@ -3,7 +3,10 @@ layout: $layouts/assignment.astro
 title: Toca Boca
 client: Toca Boca
 image: /../../assets/tocaboca/TocaBoca_Logo_RGB.png
-image_bg: gray
+bg_color: "#FBECCB"
+fg_color: "#FC7EB1"
+caption: |
+  Projektet är ej ännu lanserat
 published_at: 2021-08-04 00:00:00
 period_start: 2020-09-15 00:00:00
 period_end: 2021-05-01 00:00:00
@@ -48,6 +51,6 @@ Inloggning, autentisering, föräldrakontroll och vän-koder har varit fokuset i
 
 - Design och implementering av nya och befintliga features i systemet med _NestJs_, _AWS_ och _Docker_
 
-- Tagit lead på att utforma och koda den primarä användarupplevelsen i _ReactJS_ och _Typescript_
+- Tagit lead på att utforma och koda den primarä användarupplevelsen i _ReactJS_ med _Typescript_
 
 - Lett teamets UX-arbete genom att producera wireframes, prototyper och tester, och drivit för presentera gruppens insikter till stakeholders och övriga team

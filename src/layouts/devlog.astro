@@ -3,6 +3,7 @@ import { SITE } from '$/config'
 import { getLanguageFromUrl } from '$/lang';
 
 import BaseLayout from '$layouts/BaseLayout.astro';
+import Aside from '$components/Common/Aside.jsx';
 
 const { content } = Astro.props
 const currentPage = Astro.request.url.pathname;
@@ -40,5 +41,5 @@ const {status, feed, items} = await posts.json()
       </ul>
     </div>
   </main>
-    <aside />
+    <Aside />
 </BaseLayout>
