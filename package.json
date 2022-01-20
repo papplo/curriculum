@@ -7,7 +7,10 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "^0.18.9",
-    "@astrojs/renderer-preact": "^0.2.1"
+    "@astrojs/renderer-preact": "^0.2.1",
+    "astro": "^0.18.9"
+  },
+  "dependencies": {
+    "showdown": "^1.9.1"
   }
 }
