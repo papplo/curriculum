@@ -3,15 +3,15 @@ import { SITE } from '$/config'
 import { getLanguageFromUrl } from '$/lang';
 
 import BaseLayout from '$layouts/BaseLayout.astro';
-import Aside from '$components/Common/Aside.jsx';
+import AsideCode from '$components/Common/Aside-code.jsx';
 
 const { content } = Astro.props
 const currentPage = Astro.request.url.pathname;
 const lang = getLanguageFromUrl(currentPage);
 
-// Dynamic pull of content from external source - rendered buildtime
-const posts = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@hvtwcfhj`)
-const {status, feed, items} = await posts.json()
+// Dynamic pull of content – render buildtime
+const gists = await fetch(`https://api.github.com/users/papplo/gists`).then(res => res.json());
+const contents = await fetch('https://gist.githubusercontent.com/papplo/b38263c8c9e136347a585b466a97247d/raw/6c03025812ec9f4b3757636db2bfa5bf6ee716fc/The%20Virtual%20Dom.md').then(res => res.text())
 ---
 
 <BaseLayout addHead lang={lang} bodyClassName="page devlog-page">
@@ -31,15 +31,16 @@ const {status, feed, items} = await posts.json()
   </style>
   <main class="wrapper">
     <div class="wrapper wrapper__readable mt8">
-      <h1 class="title mt4 mb4">{content.title}</h1>
+      <h2 class="title">Today I Learned</h2>
       <ul class="bio">
-        {items.map(({ link, title }) => (
-          <li>
-            <a style="link" href={link}>{title}</a>
-          </li>
-        ))}
+      {gists && gists.map(({ id, html_url, files, size, created_at}) => (
+        <li>
+          <a style="link" href={html_url} target="__blank">{Object.keys(files)[0]}</a>
+        </li>
+      ))
+      }
       </ul>
     </div>
   </main>
-    <Aside />
+    <AsideCode:load bgColor="#1B2630" image={false} content={contents} />
 </BaseLayout>

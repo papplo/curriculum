@@ -14,13 +14,15 @@ export const KNOWN_LANGUAGES = {
 export const MAIN_NAV = {
   sv: [
     { text: "Uppdrag", link: "/sv/assignments" },
-    { text: "Anteckningar", link: "/sv/devlog" },
-    { text: "Switch to English", link: "/en/" },
+    { text: "Artiklar", link: "/sv/devlog" },
+    { text: "TIL", link: "/sv/til" },
+    { text: "Eng 🇬🇧", link: "/en/" },
   ],
   en: [
     { text: "Assignments", link: "/en/assignments" },
     { text: "Devlog", link: "/en/devlog" },
-    { text: "På Svenska", link: "/sv/" },
+    { text: "TIL", link: "/en/til" },
+    { text: "Sve 🇸🇪", link: "/sv/" },
   ],
 };
 

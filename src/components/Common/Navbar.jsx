@@ -29,7 +29,6 @@ const Navbar = (props) => {
         </a>
       ))}
 
-      {/* <span class={Styles.langSwitch}>{renderLangaugeSwitch(props.lang)}</span> */}
       <a className={Styles.social} href="https://github.com/papplo">
         <svg
           className={Styles.socialicon}

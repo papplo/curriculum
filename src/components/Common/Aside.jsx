@@ -10,7 +10,7 @@ const Aside = ({ image, bgColor, fgColor, caption, type = "default"}) => {
                 '--aside-bg-color': bgColor,
             } : null}
         >
-            {image && (
+            {!image && (
                 <figure className={Styles.figure}>
                     <img src={image} />
                     <figcaption

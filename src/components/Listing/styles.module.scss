@@ -58,7 +58,7 @@
     color: $c-light;
 
     &:hover, &:focus {
-        border-color: $c-orange;
+        text-decoration: underline;
         transform: translate(0, 3px);
         transition-delay: 70ms;
       }
