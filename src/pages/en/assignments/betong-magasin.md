@@ -2,7 +2,7 @@
 layout: $layouts/assignment.astro
 title: Betong.se
 client: Tidskriften Betong
-image: ../../assets/betong/betong_se.png
+image: /../../assets/betong/betong_se.png
 bg_color: "#FFFFFF"
 fg_color: "#000"
 caption: |
