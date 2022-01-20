@@ -16,7 +16,7 @@ role:
   - Senior Frontend-developer
   - Ui/Ux-designer
 description: |
-  As a senior frontend developer I worked with on various parts of the company's products and offerings, such as internal booking interfaces and public facing sites. Solid c-commerce principles and scalability were keywords in this journey.
+  As a senior frontend developer I worked with on various parts of the company's products and offerings, such as internal booking interfaces and public facing sites. Solid e-commerce principles and scalability were keywords in this journey.
 
 tags:
   - User interface design

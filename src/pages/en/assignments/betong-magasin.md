@@ -25,9 +25,10 @@ tags:
 
 teknik:
  - Wordpress
+ - Analytics
  - Plugins
  - Themes
- - Cufon
+ - Css
 
 ---
 
