@@ -13,7 +13,7 @@ const currentPage = Astro.request.url.pathname
 const language = getLanguageFromUrl(currentPage)
 
 const { period_end, period_start, title, client, lang, role, description, image, caption, bg_color, fg_color, tags, teknik} = Astro.props.content;
-const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end).getFullYear()}`
+const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end || new Date(Date.now())).getFullYear()}`
 const techStack = T('assignment','tech_stack', lang || language);
 const myRole = T('assignment','my_role', lang || language);
 

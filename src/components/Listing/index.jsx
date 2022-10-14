@@ -15,7 +15,7 @@ function AssignmentListing({ assignment, strings }) {
     url,
   } = assignment;
   const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(
-    period_end
+    period_end || Date.now()
   ).getFullYear()}`;
 
   return (
