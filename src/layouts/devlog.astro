@@ -33,7 +33,7 @@ const {status, feed, items} = await posts.json()
     <div class="wrapper wrapper__readable mt8">
       <h1 class="title mt4 mb4">{content.title}</h1>
       <ul class="bio">
-        {items.map(({ link, title }) => (
+        {items && items.map(({ link, title }) => (
           <li>
             <a style="link" href={link}>{title}</a>
           </li>
