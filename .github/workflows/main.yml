@@ -1,28 +1,29 @@
 env:
-    githubEmail: pablo.anttila@gmail.com
-    deployToRepo: papplo.github.io
+  githubEmail: pablo.anttila@gmail.com
+  deployToRepo: papplo.github.io
 
 name: Github Pages Astro CI
 
-on: 
-    push:
-      branches: [main]
-    pull_request:
-      branches: [main]
-    
-    workflow_dispatch:
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
+        uses: 'node16'
+
         run: |
           npm run build
           touch ./dist/.nojekyll
@@ -32,7 +33,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'dist'
+          source-directory: "dist"
           destination-github-username: ${{ github.actor }}
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
