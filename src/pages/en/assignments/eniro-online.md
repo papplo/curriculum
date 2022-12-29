@@ -24,13 +24,13 @@ tags:
 teknik:
   - WpEngine
   - WordPress
-  - WooCommerce 
+  - WooCommerce
   - Bootstrap
   - JavaScript
   - jQuery
   - Css/Sass
   - React
-  - Gulp 
+  - Gulp
   - Git
   - Analytics
 ---

@@ -6,7 +6,7 @@ const stripSlashes = (path) => path.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
 
 export function getLanguageFromUrl(pathname) {
   const langCodeMatch = stripSlashes(pathname);
-  return langCodeMatch ? langCodeMatch[1] : "sv";
+  return langCodeMatch ? langCodeMatch?.[1] : "sv";
 }
 
 export function getAlternateLanguages(currentLang) {

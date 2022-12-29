@@ -1,69 +1,70 @@
-@use '../../../public/styles/_var.scss' as *;
+@use "../../../public/styles/_var.scss" as *;
 
 .listing_grid {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    @media(max-width: $min-mobile) {
-        flex-direction: column;
-    }
+  @media (max-width: $min-mobile) {
+    flex-direction: column;
+  }
 }
 
 .column_left {
-    flex-grow: 0;
-    width: 14%;
-    font-size: $f-d1;
-    line-height: 20px;
-    margin-top: .8em;
-    padding-right: .5em;
-    color: $c-light;
+  flex-grow: 0;
+  width: 14%;
+  font-size: $f-d1;
+  line-height: 20px;
+  margin-top: 0.8em;
+  padding-right: 0.5em;
+  color: $c-light;
 
-    @media(max-width: $min-mobile) {
-        width: auto;
-        margin-bottom: .2em;
-    }
+  @media (max-width: $min-mobile) {
+    width: auto;
+    margin-bottom: 0.2em;
+  }
 }
 
 .column_main {
-    flex-grow: 1;
-    width: 86%;
+  flex-grow: 1;
+  width: 86%;
 
-    @media(max-width: $min-mobile) {
-        width: auto;
-    }
+  @media (max-width: $min-mobile) {
+    width: auto;
+  }
 }
 
 .listing_title {
-    font-size: $f-u3;
-    font-weight: 400;
-    margin: 0 0;
-    line-height: 1em;
+  font-size: $f-u3;
+  font-weight: 400;
+  margin: 0 0;
+  line-height: 1em;
 }
 
 .listing_title_inner {
-    font-size: $f-d4;
-    color: $c-light;
+  font-size: $f-d4;
+  color: $c-light;
 }
 
 .listing_description {
-    font-size: $f-d1;
-    margin: .75rem 0 .25em;
+  font-size: $f-d1;
+  margin: 0.75rem 0 0.25em;
 }
 
 .link {
-    transition: all 120ms ease-in-out;
-    font-style: italic;
-    margin-left: -.25em;
-    font-size: $f-d1;
-    color: $c-light;
+  transition: all 120ms ease-in-out;
+  font-style: italic;
+  margin-left: -0.25em;
+  font-size: $f-d1;
+  color: $c-light;
 
-    &:hover, &:focus {
-        border-color: $c-orange;
-        transform: translate(0, 3px);
-        transition-delay: 70ms;
-      }
+  &:hover,
+  &:focus {
+    border-color: $c-orange;
+    transform: translate(0, 3px);
+    transition-delay: 70ms;
+  }
 }
-.iconLink{
-    fill: $c-light;
-    padding-right: .25em;
+.iconLink {
+  fill: $c-light;
+  padding-right: 0.25em;
 }

@@ -4,7 +4,7 @@ title: Design Mobile
 client: Design Mobile
 image: /../../assets/designmobile/designmobile_01.jpg
 caption: |
-  I den mobila webbens unga år utforskade jag som gränssnittsdesigner flera alternativa tekniker till att nå ut till de mobila besökarna, vars andel hade blivit en allt större del av helheten. För Design Mobile utförde jag flertalet projekt från design till produktion på den egna plattformen som jag även hjälpte till att vidareutveckla. 
+  I den mobila webbens unga år utforskade jag som gränssnittsdesigner flera alternativa tekniker till att nå ut till de mobila besökarna, vars andel hade blivit en allt större del av helheten. För Design Mobile utförde jag flertalet projekt från design till produktion på den egna plattformen som jag även hjälpte till att vidareutveckla.
 bg_color: "#000"
 fg_color: "#fff"
 published_at: 2021-08-25 00:00:00

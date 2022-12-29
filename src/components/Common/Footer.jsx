@@ -1,4 +1,3 @@
-import { h } from "preact";
 import Styles from "./Footer.module.scss";
 
 function Footer() {

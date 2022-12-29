@@ -1,25 +1,24 @@
 ---
-import { SITE } from '$/config';
-import { getLanguageFromUrl } from '$/lang';
+import { getLanguageFromUrl } from "$/lang";
 
-import BaseLayout from '$layouts/BaseLayout.astro';
+import BaseLayout from "$layouts/BaseLayout.astro";
 
-import Button from '$components/Button/index.jsx';
-import AssignmentListing from '$components/Listing/index.jsx';
-import Aside from '$components/Common/Aside.jsx';
+import Button from "$components/Button/index.jsx";
+import AssignmentListing from "$components/Listing/index.jsx";
+import Aside from "$components/Common/Aside.jsx";
 
-const { content } = Astro.props
-const currentPage = Astro.request.url.pathname;
+const { content } = Astro.props;
+const currentPage = Astro.request.url;
 const lang = getLanguageFromUrl(currentPage);
 
-const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
-  .sort((a,b) => new Date(b.period_end) - new Date(a.period_end))
+const latestAssignments = await Astro.glob("./assignments/**/*.md")
+  .sort((a, b) => new Date(b.period_end) - new Date(a.period_end))
   .filter((item, index) => index < 3 && item);
-
 ---
+
 <BaseLayout addHead lang={lang} bodyClassName={`body`}>
   <style lang="scss">
-    @use '../../public/styles/_var.scss' as *;
+    @use "../../public/styles/_var.scss" as *;
 
     .hero {
       position: relative;
@@ -51,7 +50,7 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
     }
 
     .hero_title {
-      text-indent: -.5em;
+      text-indent: -0.5em;
       font-weight: 900;
       font-size: $f-u6;
       margin-bottom: 0.5rem;
@@ -62,7 +61,6 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
         font-size: $f-u7;
         text-indent: -1.5em;
         line-height: $f-d3;
-
       }
 
       .subtitle {
@@ -91,33 +89,38 @@ const latestAssignments = Astro.fetchContent('./assignments/**/*.md')
   </style>
   <main class="wrapper">
     <section class="hero">
-        <div class="overlay">
-          <h1 class="hero_title title">
-            Pablo Anttila <span class="subtitle">— {content.tagline}</span>
-          </h1>
-        </div>
+      <div class="overlay">
+        <h1 class="hero_title title">
+          Pablo Anttila <span class="subtitle">— {content.tagline}</span>
+        </h1>
+      </div>
     </section>
 
     <div class="wrapper wrapper__readable">
       <h2 class="section_title title">{content.bio}</h2>
       <div class="bio">
-        <slot></slot>
+        <slot />
       </div>
 
       <div class="mt4 mb8">
         <a href="/assets/Cv_PabloAnttila_2021.pdf" download class="mr2">
-          <Button>{content.download}<span class="ml1 mt0 mb0 f-u1">↓</span> 
-        </Button>
+          <Button
+            >{content.download}<span class="ml1 mt0 mb0 f-u1">↓</span>
+          </Button>
         </a>
         <a href="https://www.linkedin.com/in/pablo-a-bb84a24/" class="mt2">
-          <Button>{content.connect}<span class="ml1 mt0 mb0 f-u1">+</span> 
-        </Button>
+          <Button
+            >{content.connect}<span class="ml1 mt0 mb0 f-u1">+</span>
+          </Button>
         </a>
       </div>
 
       <blockquote class="f-u4 mt4">
-        Från e-handelsvärlden bär Pablo med sig goda kunskaper från vad som driver försäljning och var man tappar en potentiell kund. Att hela tiden kunna se påverkan och effekt av resten av domänen är något han bidrar med i alla projekt han deltar i.
-        <span><strong>Thomas Näslund</strong>, Deputy CEO at R2M </span>
+        Från e-handelsvärlden bär Pablo med sig goda kunskaper från vad som
+        driver försäljning och var man tappar en potentiell kund. Att hela tiden
+        kunna se påverkan och effekt av resten av domänen är något han bidrar
+        med i alla projekt han deltar i.
+        <span><strong>Thomas Näslund</strong>, Deputy CEO at R2M</span>
       </blockquote>
     </div>
   </main>

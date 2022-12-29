@@ -8,7 +8,6 @@ download: Download my Resume
 connect: Connect on Linkedin
 ---
 
-
 I have worked as a programmer and designer since 2010 and have nurtured a passion for modern and customer-centric solutions online.
 
 Over the past years, I have had the opportunity to take various roles, fundamental to shape my knowledge in _Web Development_, _Visual Communication_ and _Ui / Ux-design_. I´ve built a habit and feel confident working in agile teams closely with developers, designers and stakeholders.

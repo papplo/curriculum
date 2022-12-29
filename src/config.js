@@ -26,27 +26,27 @@ export const MAIN_NAV = {
 
 // experimental feature -> get traduced strings, or return the term that was asked...
 const TRADUCE = {
-    common: {
-      see_more: {
-        en: 'Read more about',
-        sv: 'Se mer om'
-      },
-      world: {
-        en: 'world',
-        sv: null
-      }
+  common: {
+    see_more: {
+      en: "Read more about",
+      sv: "Se mer om",
     },
-    assignment: {
-      my_role: {
-        en: 'My role',
-        sv: 'Min roll'
-      },
-      tech_stack: {
-        en: 'Tech Stack',
-        sv: 'Teknik som används'
-      }
-    }
-}
+    world: {
+      en: "world",
+      sv: null,
+    },
+  },
+  assignment: {
+    my_role: {
+      en: "My role",
+      sv: "Min roll",
+    },
+    tech_stack: {
+      en: "Tech Stack",
+      sv: "Teknik som används",
+    },
+  },
+};
 
-export const T = (page, term, lang) => TRADUCE[page][term][lang] ? TRADUCE[page][term][lang] : TRADUCE[page][term];
-
+export const T = (page, term, lang) =>
+  TRADUCE[page][term][lang] ? TRADUCE[page][term][lang] : TRADUCE[page][term];

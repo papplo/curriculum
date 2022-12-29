@@ -1,28 +1,23 @@
 ---
-  // Import Configs and constants
-import { SITE } from '$/config';
+// Import Configs and constants
+import { SITE } from "$/config";
 
-  // Import Layout Partials for composing layouts
-import BaseHead from './BaseHead.astro';
+// Import Layout Partials for composing layouts
+import BaseHead from "./BaseHead.astro";
 
-  // Import Components
-import Navbar from '$components/Common/Navbar.jsx';
-import Header from '$components/Common/Header.jsx';
-import Footer from '$components/Common/Footer.jsx';
+// Import Components
+import Navbar from "$components/Common/Navbar.jsx";
+import Header from "$components/Common/Header.jsx";
+import Footer from "$components/Common/Footer.jsx";
 
 // Layout props
-const { addHead = true, lang, bodyClassName } = Astro.props
+const { addHead = true, lang, bodyClassName } = Astro.props;
 ---
 
 <html lang={lang}>
-  {addHead && (
-    <head>
-      <BaseHead />
-    </head>
-  )}
-  <body class={bodyClassName && bodyClassName}>
-    <Navbar lang={lang} />
-    <slot></slot>
-    <Footer />
-  </body>
+  {addHead && <BaseHead />}
+
+  <Navbar lang={lang} />
+  <slot />
+  <Footer />
 </html>

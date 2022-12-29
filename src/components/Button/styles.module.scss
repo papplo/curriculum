@@ -1,16 +1,17 @@
-@use '../../../public/styles/_var.scss' as *;
+@use "../../../public/styles/_var.scss" as *;
 
 .button {
   transition: all 120ms ease-in-out;
   display: inline-block;
   border: 1.5px solid $c-light;
-  border-color: rgba(0,0,0,.4);
+  border-color: rgba(0, 0, 0, 0.4);
   border-radius: 2px;
   padding: 0.5em 1em;
   font-weight: 400;
   // text-transform: capitalize;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: $c-orange;
     transform: translate(0, -1px);
     transition-delay: 70ms;
@@ -18,5 +19,5 @@
 }
 
 .inline {
-  padding: .2em .5em;
+  padding: 0.2em 0.5em;
 }

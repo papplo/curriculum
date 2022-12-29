@@ -1,4 +1,3 @@
-import { h } from "preact";
 import { Markdown } from "astro/components";
 import Styles from "./styles.module.scss";
 

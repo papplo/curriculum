@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        uses: 'node16'
+        uses: "node16"
 
         run: |
           npm run build

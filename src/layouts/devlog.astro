@@ -1,22 +1,24 @@
 ---
-import { SITE } from '$/config'
-import { getLanguageFromUrl } from '$/lang';
+import { SITE } from "$/config";
+import { getLanguageFromUrl } from "$/lang";
 
-import BaseLayout from '$layouts/BaseLayout.astro';
-import Aside from '$components/Common/Aside.jsx';
+import BaseLayout from "$layouts/BaseLayout.astro";
+import Aside from "$components/Common/Aside.jsx";
 
-const { content } = Astro.props
-const currentPage = Astro.request.url.pathname;
+const { content } = Astro.props;
+const currentPage = Astro.request.url;
 const lang = getLanguageFromUrl(currentPage);
 
-  // Dynamic pull of content from external source - rendered buildtime
-const posts = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@hvtwcfhj`)
-const {status, feed, items} = await posts.json()
+// Dynamic pull of content from external source - rendered buildtime
+const posts = await fetch(
+  `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@hvtwcfhj`
+);
+const { status, feed, items } = await posts.json();
 ---
 
 <BaseLayout addHead lang={lang} bodyClassName="page devlog-page">
   <style lang="scss">
-    @use '../../public/styles/_var.scss' as *;
+    @use "../../public/styles/_var.scss" as *;
     .title {
       font-size: $f-u5;
       color: $c-orange;
@@ -33,13 +35,18 @@ const {status, feed, items} = await posts.json()
     <div class="wrapper wrapper__readable mt8">
       <h1 class="title mt4 mb4">{content.title}</h1>
       <ul class="bio">
-        {items && items.map(({ link, title }) => (
-          <li>
-            <a style="link" href={link}>{title}</a>
-          </li>
-        ))}
+        {
+          items &&
+            items.map(({ link, title }) => (
+              <li>
+                <a style="link" href={link}>
+                  {title}
+                </a>
+              </li>
+            ))
+        }
       </ul>
     </div>
   </main>
-    <Aside />
+  <Aside />
 </BaseLayout>

@@ -29,7 +29,7 @@ teknik:
 
 Dreamlake is a startup offering a commercial platform for online cruise agents and travel agencies in the nordics, catering for the world wide cruise market. It's clients are some of the Nordics major businesses, for which the product takes a revolutionary standpoint on selling, marketing and converting cruises online.
 
-My developer/ designer role has been varied in a fast paced environment, providing ideas, support and hands on action on internal and external web interfaces, with a mindset for ease-of-use, conversion metrics, and problem solving. 
+My developer/ designer role has been varied in a fast paced environment, providing ideas, support and hands on action on internal and external web interfaces, with a mindset for ease-of-use, conversion metrics, and problem solving.
 In an agile team of developers, product owner and stake holders, i've designed, tested and measured and created the main views and user journey for online cruise booking.
 
 ## During the assignment I've
@@ -38,4 +38,4 @@ In an agile team of developers, product owner and stake holders, i've designed, 
 
 - Designed the user interface, checkout and site search. Developed mainly in _ReactJs_, _NextJs_
 
-- Created and further developed the clients content management in a _headless_ solution, and provided training for content creators. (_Prismic_, _Rest Api_) 
+- Created and further developed the clients content management in a _headless_ solution, and provided training for content creators. (_Prismic_, _Rest Api_)

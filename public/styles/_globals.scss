@@ -1,4 +1,4 @@
-@use './_var' as *;
+@use "./_var" as *;
 
 :root {
   --theme-bg-color: $t-bg;
@@ -9,110 +9,111 @@
 
 // Base
 body {
-    margin: 0;
-    color: $t-fg;
-    font-family: $body;
+  margin: 0;
+  color: $t-fg;
+  font-family: $body;
 
-    @media (min-width: $min-mobile) {
-      & {
-        transition: margin 125ms ease-in-out 225ms;
-        margin-left: 33.3333333vw;
-      }
+  @media (min-width: $min-mobile) {
+    & {
+      transition: margin 125ms ease-in-out 225ms;
+      margin-left: 33.3333333vw;
     }
-    @media (min-width: $min-display) {
-      & {
-        font-size: 1rem;
-        margin-left: 50vw;
-      }
-      header,
-      footer,
-      article {
-        max-width: 45em;
-      }
+  }
+  @media (min-width: $min-display) {
+    & {
+      font-size: 1rem;
+      margin-left: 50vw;
     }
-      
-    @media (min-width: $min-jumbo) {
-      & {
-        font-size: 1.2rem;
-      }
+    header,
+    footer,
+    article {
+      max-width: 45em;
     }
+  }
+
+  @media (min-width: $min-jumbo) {
+    & {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 * {
-    box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-    text-decoration: none;
-    color: currentColor;
+  text-decoration: none;
+  color: currentColor;
 
-    &.link {
-        transition: background-size 150ms;
-        background-position: 0 2em;
-        background-image: -webkit-linear-gradient(
-        top,
-        transparent 60%,
-        #0838ff 60%
-        );
-        background-image: linear-gradient(to bottom, transparent 60%, #0838ff 60%);
-        background-repeat: repeat-x;
-        background-size: 1px 2px;
+  &.link {
+    transition: background-size 150ms;
+    background-position: 0 2em;
+    background-image: -webkit-linear-gradient(
+      top,
+      transparent 60%,
+      #0838ff 60%
+    );
+    background-image: linear-gradient(to bottom, transparent 60%, #0838ff 60%);
+    background-repeat: repeat-x;
+    background-size: 1px 2px;
 
-        &:hover {
-        background-size: 1px 4px;
-        background-position: 0 1.28em;
-        color: currentColor;
-        }
+    &:hover {
+      background-size: 1px 4px;
+      background-position: 0 1.28em;
+      color: currentColor;
     }
+  }
 }
 
 h1 {
-    font-size: $f-u8;
-  }
+  font-size: $f-u8;
+}
 
 ul.reset {
   list-style: none;
   padding: 0;
-  margin: 0;  
+  margin: 0;
 }
 
 blockquote {
   text-indent: 1em;
   position: relative;
   color: $c-light;
-  background-color: #FDFBFA;
-  font-size: $f-d2; 
+  background-color: #fdfbfa;
+  font-size: $f-d2;
   margin: 0;
   padding: 1.2em 1.5em;
   max-width: 45em;
-  
-  &:before, &:after {
-    background-color: #FDFBFA;
+
+  &:before,
+  &:after {
+    background-color: #fdfbfa;
     text-indent: 0;
     text-align: center;
     font-family: arial;
     position: absolute;
-    color:  $c-orange;
+    color: $c-orange;
     font-size: $f-u14;
     width: 3rem;
     height: 3rem;
   }
 
   &:before {
-    content: '”';
+    content: "”";
     left: -1.5rem;
     top: -1rem;
   }
-  
+
   &:after {
-    content: '”';
+    content: "”";
     right: -1.5rem;
-    bottom: .5rem;
+    bottom: 0.5rem;
   }
 
   span {
@@ -129,21 +130,21 @@ $colors: "black", "blue", "white", "light";
 @each $colorvar in $colors {
   // text color
   .tc-#{$colorvar} {
-    color: '$c-'#{$colorvar};
+    color: "$c-" #{$colorvar};
   }
   // background color
   .bg-#{$colorvar} {
-    background-color: '$c-'#{$colorvar};
+    background-color: "$c-" #{$colorvar};
   }
 }
 
 // font size
 @for $i from 0 through 18 {
   .f-u#{$i} {
-    font-size: '$f-u'#{$i};
+    font-size: "$f-u" #{$i};
   }
   .f-d#{$i} {
-    font-size: '$f-d'#{$i};
+    font-size: "$f-d" #{$i};
   }
 }
 
@@ -199,7 +200,7 @@ $colors: "black", "blue", "white", "light";
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
-  
+
   @media (max-width: $min-mobile) {
     padding-left: 1.2rem;
     padding-right: 1.2rem;

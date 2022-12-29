@@ -1,28 +1,44 @@
 ---
-import { getLanguageFromUrl } from '$/lang.js';
-import { T } from '$/config.js';
-  
-  // Import layout partials
-import BaseLayout from '$layouts/BaseLayout.astro';
+import { getLanguageFromUrl } from "$/lang.js";
+import { T } from "$/config.js";
 
-  // Import components
-import Button from '../components/Button/index.jsx';
-import Aside from '$components/Common/Aside.jsx';
+// Import layout partials
+import BaseLayout from "$layouts/BaseLayout.astro";
 
-const currentPage = Astro.request.url.pathname
-const language = getLanguageFromUrl(currentPage)
+// Import components
+import Button from "../components/Button/index.jsx";
+import Aside from "$components/Common/Aside.jsx";
 
-const { period_end, period_start, title, client, lang, role, description, image, caption, bg_color, fg_color, tags, teknik} = Astro.props.content;
-const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(period_end || new Date(Date.now())).getFullYear()}`
-const techStack = T('assignment','tech_stack', lang || language);
-const myRole = T('assignment','my_role', lang || language);
+const currentPage = Astro.request.url;
+const language = getLanguageFromUrl(currentPage);
 
-const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
+const {
+  period_end,
+  period_start,
+  title,
+  client,
+  lang,
+  role,
+  description,
+  image,
+  caption,
+  bg_color,
+  fg_color,
+  tags,
+  teknik,
+} = Astro.props.content;
+const renderDate = `${new Date(period_start).getFullYear()} — ${new Date(
+  period_end || new Date(Date.now())
+).getFullYear()}`;
+const techStack = T("assignment", "tech_stack", lang || language);
+const myRole = T("assignment", "my_role", lang || language);
 
+const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption };
 ---
+
 <BaseLayout addHead lang={language} bodyClassName="assignment">
   <style lang="scss">
-    @use '../../public/styles/_var.scss' as *;
+    @use "../../public/styles/_var.scss" as *;
     .hero {
       padding: 8rem;
       display: flex;
@@ -47,7 +63,7 @@ const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
       font-size: $f-d3;
       color: $c-light;
     }
-   .leadIn {
+    .leadIn {
       font-size: $f-u3;
       color: var(--t-bg);
     }
@@ -77,13 +93,13 @@ const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
       .table_heading {
         font-size: $f-d2;
         letter-spacing: 0.06em;
-        margin: -.2em 0 .5em;
+        margin: -0.2em 0 0.5em;
         color: $c-orange;
       }
 
       .table_cell {
-          padding: 1em;
-          flex-basis: 50%;
+        padding: 1em;
+        flex-basis: 50%;
 
         + .table_cell {
           border-left: $tborder;
@@ -103,16 +119,15 @@ const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
           list-style: none;
           font-size: $f-d2;
           letter-spacing: 0.03em;
-          margin: 0 .8em 0 0;
+          margin: 0 0.8em 0 0;
           @media (min-width: $min-mobile) {
             font-size: $f-d1;
           }
         }
       }
     }
-
   </style>
-    <main class="wrapper wrapper-readable">
+  <main class="wrapper wrapper-readable">
     <section class="wrapper leadIn">
       <h1 class="assignmentTitle">{title}</h1>
       <span class="date">{renderDate}</span><br />
@@ -125,23 +140,25 @@ const asideProps = { image, bgColor: bg_color, fgColor: fg_color, caption }
       <div class="table mb12">
         <div class="table_cell">
           <h2 class="table_heading">{myRole}</h2>
-            <ul class="role reset ml0">
-              {role?.map((role, index) => <li class="role_item">{role}</li>)}
-            </ul>
+          <ul class="role reset ml0">
+            {role?.map((role, index) => <li class="role_item">{role}</li>)}
+          </ul>
         </div>
         <div class="table_cell">
           <h2 class="table_heading">{techStack}</h2>
-            <ul class="role reset ml0">
-              {teknik?.map((teknik, index) => <li class="role_item">{teknik}</li>)}
-            </ul>
+          <ul class="role reset ml0">
+            {
+              teknik?.map((teknik, index) => (
+                <li class="role_item">{teknik}</li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     </section>
     <div class="wrapper wrapper__readable">
-      <div class="content"><slot></slot></div>
+      <div class="content"><slot /></div>
     </div>
   </main>
-  <Aside type='assignment' ...asideProps />
-
+  <Aside type="assignment" ...asideProps />
 </BaseLayout>
-

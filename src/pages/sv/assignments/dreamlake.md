@@ -35,10 +35,10 @@ Klienterna är byggda främst med _Node_ och _NextJS_ (React) vilka jag anpassat
 
 Mitt arbete på Dreamlake har genomsyrats av ett starkt e-handelstänk i hela tratten med optimering för sökmotorer, mobile first-tänk, skapande av funnels för analys, taggning (GA), heatmaps, anpassade mailmallar och självklart en analys och tolkning av uppmätt data.
 
-## Under uppdragets gång har jag 
+## Under uppdragets gång har jag
 
- - Undersökt och tagit fram grundläggande design av siteprodukten med wireframes, personas, sitestruktur och kundflöde. Detta genom besöksanalys, djupintervjuer och workshops (UX)
+- Undersökt och tagit fram grundläggande design av siteprodukten med wireframes, personas, sitestruktur och kundflöde. Detta genom besöksanalys, djupintervjuer och workshops (UX)
 
- - Designat och konstruerat produktens gränssnitt, checkout-flöde och sökfunktionalitet (UI, ReactJS)
+- Designat och konstruerat produktens gränssnitt, checkout-flöde och sökfunktionalitet (UI, ReactJS)
 
- - Skapat och vidareutvecklat kundsiternas _Headless Cms_-lösning, och därtill dokumenterat och utbildat användare i densamma. (Prismic CMS, Rest API)
+- Skapat och vidareutvecklat kundsiternas _Headless Cms_-lösning, och därtill dokumenterat och utbildat användare i densamma. (Prismic CMS, Rest API)

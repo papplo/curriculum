@@ -1,4 +1,3 @@
-import { h } from "preact";
 import Styles from "./Navbar.module.scss";
 import avatar from "../../../public/assets/avatar.jpg";
 import { getAlternateLanguages } from "$/lang.js";
