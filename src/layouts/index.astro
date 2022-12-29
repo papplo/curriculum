@@ -8,10 +8,11 @@ import AssignmentListing from "$components/Listing/index.jsx";
 import Aside from "$components/Common/Aside.jsx";
 
 const { content } = Astro.props;
-const currentPage = Astro.request.url;
-const lang = getLanguageFromUrl(currentPage);
+const url = Astro.request.url;
+const lang = getLanguageFromUrl(url);
 
-const latestAssignments = await Astro.glob("./assignments/**/*.md")
+const latestAssignments = await Astro.glob<Frontmatter>(`../pages/*/assignments/*.md`);
+  latestAssignments
   .sort((a, b) => new Date(b.period_end) - new Date(a.period_end))
   .filter((item, index) => index < 3 && item);
 ---
